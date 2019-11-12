@@ -50,7 +50,7 @@ Task("Get-Version")
     Information("Version: " + version);
 });
 
-Task("Build")
+Task("Pack")
     .IsDependentOn("Get-Version")
     .Does(() =>
 {
@@ -62,12 +62,25 @@ Task("Build")
     NuGetPack("Mjolnir.Cake.nuspec", settings);
 });
 
+Task("Push")
+    .IsDependentOn("Pack")
+    .Does(() =>
+{
+    var settings = new NuGetPushSettings
+    {
+        Source = "https://api.nuget.org/v3/index.json",
+        ApiKey = "-TEST-"
+    };
+
+    NuGetPush("./Mjolnir.Cake.*.nupkg", settings);
+});
+
 //////////////////////////////////////////////////////////////////////
 // TASK TARGETS
 //////////////////////////////////////////////////////////////////////
 
 Task("Default")
-    .IsDependentOn("Build");
+    .IsDependentOn("Pack");
 
 //////////////////////////////////////////////////////////////////////
 // EXECUTION
