@@ -33,6 +33,12 @@ Task("Get-Version")
     string shasum = "X";
 
     var gitDescription = GitDescribe("./", true, GitDescribeStrategy.Default);
+
+    if (string.IsNullOrEmpty(gitDescription))
+    {
+        throw new Exception("Unable to read version tag");
+    }
+
     Information("Repository description: " + gitDescription);
 
     Regex query = new Regex(@"v(?<major>\d+).(?<minor>\d+).(?<revision>\d+)-(?<commits>\d+)-(?<shasum>.*)");
