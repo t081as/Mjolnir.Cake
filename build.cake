@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 //////////////////////////////////////////////////////////////////////
 
 var target = Argument("target", "Default");
-var configuration = Argument("configuration", "Debug");
+var key = Argument("key", "-TEST-");
 
 //////////////////////////////////////////////////////////////////////
 // TASKS
@@ -69,7 +69,7 @@ Task("Push")
     var settings = new NuGetPushSettings
     {
         Source = "https://api.nuget.org/v3/index.json",
-        ApiKey = "-TEST-"
+        ApiKey = key
     };
 
     NuGetPush("./Mjolnir.Cake.*.nupkg", settings);
