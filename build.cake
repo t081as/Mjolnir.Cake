@@ -93,33 +93,3 @@ Task("Default")
 //////////////////////////////////////////////////////////////////////
 
 RunTarget(target);
-
-//////////////////////////////////////////////////////////////////////
-// FUNCTIONS
-//////////////////////////////////////////////////////////////////////
-
-public static int GetPersistentBuildNumber(string baseDirectory)
-{
-    int buildNumber;
-    string persistentPathName = System.IO.Path.Combine(baseDirectory, ".cache");
-    string persistentFileName = System.IO.Path.Combine(persistentPathName, "build-number");
-
-    try
-    {
-        if (!System.IO.Directory.Exists(persistentPathName))
-        {
-            System.IO.Directory.CreateDirectory(persistentPathName);
-        }
-
-        buildNumber = int.Parse(System.IO.File.ReadAllText(persistentFileName).Trim());
-        buildNumber++;
-    }
-    catch
-    {
-        buildNumber = 1;
-    }
-
-    System.IO.File.WriteAllText(persistentFileName, buildNumber.ToString());
-
-    return buildNumber;
-}
