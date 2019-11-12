@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Mjolnir.Cake</id>
+    <version>0.1.0</version>
+    <title>Mjolnir.Cake</title>
+    <authors>Tobias Koch</authors>
+    <owners>Tobias Koch</owners>
+    <description>Common scripts for the cake build system</description>
+    <copyright>Copyright © 2017-2019 Tobias Koch</copyright>
+    <license type="expression">MIT</license>
+    <projectUrl>https://gitlab.com/tobiaskoch.Cake/Mjolnir</projectUrl>
+    <repository type="git" url="https://gitlab.com/tobiaskoch/Mjolnir.Cake.git" />
+    <language>en-us</language>
+    <icon>Mjolnir.png</icon>
+    <tags>cake build common</tags>
+  </metadata>
+  <files>
+    <file src="README.md" />
+    <file src="LICENSE.md" />
+    <file src="CHANGELOG.md" />
+    <file src="AUTHORS.txt" />
+
+    <file src="img/Mjolnir.png" target="/" />
+
+    <file src="tools/CreateVersionProps.cake" target="tools" />
+    
+  </files>
+</package>
