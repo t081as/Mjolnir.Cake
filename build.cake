@@ -1,6 +1,6 @@
 #addin "nuget:?package=Cake.Git&version=0.21.0"
 
-using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 //////////////////////////////////////////////////////////////////////
@@ -78,7 +78,10 @@ Task("Push")
         ApiKey = key
     };
 
-    NuGetPush("./Mjolnir.Cake.*.nupkg", settings);
+    var packageFile = GetFiles("./Mjolnir.Cake.*.nupkg").FirstOrDefault();
+    Information("Generated nuget package: " + packageFile);
+    
+    NuGetPush(packageFile, settings);
 });
 
 //////////////////////////////////////////////////////////////////////
