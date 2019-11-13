@@ -21,7 +21,7 @@ public static int GetGitLabBuildNumber(string baseDirectory)
     int buildNumber;
 
     string pathName = System.IO.Path.Combine(baseDirectory, ".cache");
-    string fileName = System.IO.Path.Combine(persistentPathName, "build-number");
+    string fileName = System.IO.Path.Combine(pathName, "build-number");
 
     try
     {
