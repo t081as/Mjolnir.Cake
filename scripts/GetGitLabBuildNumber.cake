@@ -13,7 +13,7 @@
 /// </para>
 /// <list type="bullet">
 /// <item>Add the .cache directory to the .gitignore file</item>
-/// <item>Add the cache directove to the .gitlab-ci.yml file; see https://docs.gitlab.com/ee/ci/caching </item>
+/// <item>Add the .cache directory to the .gitlab-ci.yml file; see https://docs.gitlab.com/ee/ci/caching</item>
 /// </list>
 /// </remarks>
 public static int GetGitLabBuildNumber(string baseDirectory)
