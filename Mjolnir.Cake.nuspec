@@ -24,6 +24,7 @@
     <file src="img/Mjolnir.png" target="/" />
 
     <file src="scripts/CreateVersionProps.cake" target="tools" />
+    <file src="scripts/GetGitLabBuildNumber.cake" target="tools" />
     
   </files>
 </package>
