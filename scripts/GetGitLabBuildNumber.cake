@@ -20,17 +20,17 @@ public static int GetGitLabBuildNumber(string baseDirectory)
 {
     int buildNumber;
 
-    string persistentPathName = System.IO.Path.Combine(baseDirectory, ".cache");
-    string persistentFileName = System.IO.Path.Combine(persistentPathName, "build-number");
+    string pathName = System.IO.Path.Combine(baseDirectory, ".cache");
+    string fileName = System.IO.Path.Combine(persistentPathName, "build-number");
 
     try
     {
-        if (!System.IO.Directory.Exists(persistentPathName))
+        if (!System.IO.Directory.Exists(pathName))
         {
-            System.IO.Directory.CreateDirectory(persistentPathName);
+            System.IO.Directory.CreateDirectory(pathName);
         }
 
-        buildNumber = int.Parse(System.IO.File.ReadAllText(persistentFileName).Trim());
+        buildNumber = int.Parse(System.IO.File.ReadAllText(fileName).Trim());
         buildNumber++;
     }
     catch
@@ -38,7 +38,7 @@ public static int GetGitLabBuildNumber(string baseDirectory)
         buildNumber = 1;
     }
 
-    System.IO.File.WriteAllText(persistentFileName, buildNumber.ToString());
+    System.IO.File.WriteAllText(fileName, buildNumber.ToString());
 
     return buildNumber;
 }
