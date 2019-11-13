@@ -9,7 +9,7 @@
     <description>Common scripts for the cake build system</description>
     <copyright>Copyright © 2017-2019 Tobias Koch</copyright>
     <license type="expression">MIT</license>
-    <projectUrl>https://gitlab.com/tobiaskoch.Cake/Mjolnir</projectUrl>
+    <projectUrl>https://gitlab.com/tobiaskoch/Mjolnir.Cake</projectUrl>
     <repository type="git" url="https://gitlab.com/tobiaskoch/Mjolnir.Cake.git" />
     <language>en-us</language>
     <icon>Mjolnir.png</icon>
