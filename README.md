@@ -28,7 +28,7 @@ Get the source code using the following command:
 #### Build
     > ./build.ps1
 
-The nuget package will be located in the directory if the build succeeds.
+The nuget package will be located in the root directory if the build succeeds.
 
 ## Contributing
 see [CONTRIBUTING.md](https://gitlab.com/tobiaskoch/Mjolnir.Cake/blob/master/CONTRIBUTING.md)
