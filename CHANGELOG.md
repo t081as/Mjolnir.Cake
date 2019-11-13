@@ -1,4 +1,4 @@
-## X.Y.Z (YYYY-MM-DD)
+## 0.2.0 (2019-11-13)
 
 - GetGitLabBuildNumber function added
 
