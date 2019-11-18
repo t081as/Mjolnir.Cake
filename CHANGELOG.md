@@ -1,3 +1,7 @@
+## X.Y.Z (YYYY-MM-DD)
+
+- GetGitTagVersion function added
+
 ## 0.2.1 (2019-11-13)
 
 - Fixing GetGitLabBuildNumber function
