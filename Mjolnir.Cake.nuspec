@@ -25,6 +25,7 @@
 
     <file src="scripts/CreateVersionProps.cake" target="tools" />
     <file src="scripts/GetGitLabBuildNumber.cake" target="tools" />
+    <file src="scripts/GetGitTagVersion.cake" target="tools" />
     
   </files>
 </package>
