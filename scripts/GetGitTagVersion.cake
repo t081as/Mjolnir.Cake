@@ -6,6 +6,22 @@ using System.Text.RegularExpressions;
 // FUNCTIONS
 //////////////////////////////////////////////////////////////////////
 
+/// <summary>
+/// Generates version information based on the latest matching git tag.
+/// </summary>
+/// <param name="context">The cake context.</param>
+/// <param name="buildNumber">An optional build number provided by the continuous integration system.</param>
+/// <remarks>
+/// This method expects a git tag of the format <c>v[MAJOR].[MINOR].[REVISION]</c> (e.g. "v1.0.1", "v0.3.10", ...).
+/// </remarks>
+/// <returns>
+/// Returns version information in the following formats:
+/// <list type="bullet">
+/// <item>version: [MAJOR].[MINOR].[BUILD].[REVISION]</item>
+/// <item>short version: [MAJOR].[MINOR].[REVISION]</item>
+/// <item>semantic version: [MAJOR].[MINOR].[REVISION]+[DESCRIPTION]</item>
+/// </list>
+/// </returns>
 public static (string version, string versionShort, string versionSematic) GetGitTagVersion(ICakeContext context, int buildNumber = 0)
 {
     var tagQuery = new Regex(@"v(?<major>\d+).(?<minor>\d+).(?<revision>\d+)");
