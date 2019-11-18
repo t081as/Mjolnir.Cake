@@ -42,7 +42,7 @@ public static (string version, string versionShort, string versionSematic) GetGi
     }
     else
     {
-        label = string.Format("dev{0}-shasum", commits);
+        label = string.Format("dev{0}-{1}", commits, shasum);
     }
 
     string sematicVersion = string.Format("{0}.{1}.{2}+{3}", major, minor, revision, label);
