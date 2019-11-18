@@ -1,4 +1,4 @@
-## X.Y.Z (YYYY-MM-DD)
+## 0.3.0 (2019-11-18)
 
 - GetGitTagVersion function added
 
