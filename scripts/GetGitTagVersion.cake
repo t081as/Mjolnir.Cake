@@ -11,9 +11,9 @@ public static (string version, string versionShort, string versionSematic) GetGi
     var tagQuery = new Regex(@"v(?<major>\d+).(?<minor>\d+).(?<revision>\d+)");
     var descriptionQuery = new Regex(@"(?<tag>.*)-(?<commits>\d+)-(?<shasum>.*)");
 
-    var description = GitDescribe("./", true, GitDescribeStrategy.Default);
+    var description = GitAliases.GitDescribe(context, "./", true, GitDescribeStrategy.Default);
 
-    var tags = Cake.Git.GitTags(context, "/");
+    var tags = GitAliases.GitTags(context, "/");
     var latestMatchingTag = tags.Where(t => t.IsAnnotated && tagQuery.IsMatch(t.FriendlyName))?.LastOrDefault();
 
     if (latestMatchingTag == null)
@@ -21,7 +21,7 @@ public static (string version, string versionShort, string versionSematic) GetGi
         throw new Exception("No annotated version tag detected");
     }
 
-    var tagMatch = tagQuery.Match(latestMatchingTag);
+    var tagMatch = tagQuery.Match(latestMatchingTag.FriendlyName);
     var descriptionMatch = descriptionQuery.Match(description);
 
     var major = ulong.Parse(tagMatch.Groups["major"].Value);
@@ -42,7 +42,7 @@ public static (string version, string versionShort, string versionSematic) GetGi
     }
     else
     {
-        label = string.Format("dev{0}-shasum", commits)
+        label = string.Format("dev{0}-shasum", commits);
     }
 
     string sematicVersion = string.Format("{0}.{1}.{2}+{3}", major, minor, revision, label);
