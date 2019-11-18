@@ -1,7 +1,6 @@
+#load "scripts/CreateVersionProps.cake"
+#load "scripts/GetGitLabBuildNumber.cake"
 #load "scripts/GetGitTagVersion.cake"
-
-using System.Linq;
-using System.Text.RegularExpressions;
 
 //////////////////////////////////////////////////////////////////////
 // ARGUMENTS
