@@ -1,5 +1,3 @@
-#addin "nuget:?package=Cake.Git&version=0.21.0"
-
 #load "scripts/GetGitTagVersion.cake"
 
 using System.Linq;
