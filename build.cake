@@ -1,5 +1,7 @@
 #addin "nuget:?package=Cake.Git&version=0.21.0"
 
+#load "scripts/GetGitTagVersion.cake"
+
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -25,35 +27,15 @@ Task("Clean")
 Task("Get-Version")
     .IsDependentOn("Clean")
     .WithCriteria(DirectoryExists(".git"))
-    .Does(() =>
+    .Does((context) =>
 {
-    string major = "0";
-    string minor = "0";
-    string revision = "0";
-    string shasum = "X";
+    (string version, string shortVersion, string semanticVersion) versionInformation = GetGitTagVersion(context, 0);
 
-    var gitDescription = GitDescribe("./", true, GitDescribeStrategy.Default);
+    Information("Version: " + versionInformation.version);
+    Information("Version (short): " + versionInformation.shortVersion);
+    Information("Version (semantic): " + versionInformation.semanticVersion);
 
-    if (string.IsNullOrEmpty(gitDescription))
-    {
-        throw new Exception("Unable to read version tag");
-    }
-
-    Information("Repository description: " + gitDescription);
-
-    Regex query = new Regex(@"v(?<major>\d+).(?<minor>\d+).(?<revision>\d+)-(?<commits>\d+)-(?<shasum>.*)");
-    MatchCollection matches = query.Matches(gitDescription);
-
-    foreach (Match match in matches)
-    {
-        major = match.Groups["major"].Value;
-        minor = match.Groups["minor"].Value;
-        revision = match.Groups["revision"].Value;
-        shasum = match.Groups["shasum"].Value;
-    }
-
-    version = string.Format("{0}.{1}.{2}+{3}", major, minor, revision, shasum);
-    Information("Version: " + version);
+    version = versionInformation.semanticVersion;
 });
 
 Task("Pack")
