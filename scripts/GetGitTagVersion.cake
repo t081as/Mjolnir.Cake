@@ -29,7 +29,7 @@ public static (string version, string versionShort, string versionSematic) GetGi
 
     var description = GitAliases.GitDescribe(context, "./", true, GitDescribeStrategy.Default);
 
-    var tags = GitAliases.GitTags(context, "/");
+    var tags = GitAliases.GitTags(context, "./");
     var latestMatchingTag = tags.Where(t => tagQuery.IsMatch(t.FriendlyName))?.LastOrDefault();
 
     if (latestMatchingTag == null)

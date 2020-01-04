@@ -1,3 +1,7 @@
+## 0.4.0 (2020-01-04)
+
+- Fixing problem reading the local git tags
+
 ## 0.3.0 (2019-11-18)
 
 - GetGitTagVersion function added
