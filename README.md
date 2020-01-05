@@ -40,4 +40,4 @@ see [AUTHORS.txt](https://gitlab.com/tobiaskoch/Mjolnir.Cake/blob/master/AUTHORS
 Thanks for your interest in this project. You can show your appreciation and support further development by [donating](https://www.tk-software.de/donate).
 
 ## License
-**Mjolnir.Cake** © 2017-2019  [Tobias Koch](https://www.tk-software.de). Released under the [MIT License](https://gitlab.com/tobiaskoch/Mjolnir.Cake/blob/master/LICENSE.md).
+**Mjolnir.Cake** © 2017-2020  [Tobias Koch](https://www.tk-software.de). Released under the [MIT License](https://gitlab.com/tobiaskoch/Mjolnir.Cake/blob/master/LICENSE.md).
