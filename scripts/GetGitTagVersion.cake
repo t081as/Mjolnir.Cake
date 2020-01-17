@@ -37,6 +37,9 @@ public static (string version, string versionShort, string versionSematic) GetGi
         throw new Exception("No annotated version tag detected");
     }
 
+    LoggingAliases.Information(context, "Tag: Cake.Git returns: " + latestMatchingTag);
+    LoggingAliases.Information(context, "Description: Cake.Git returns: " + description);
+
     var tagMatch = tagQuery.Match(latestMatchingTag.FriendlyName);
     var descriptionMatch = descriptionQuery.Match(description);
 

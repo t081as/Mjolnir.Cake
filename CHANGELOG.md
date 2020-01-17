@@ -1,3 +1,7 @@
+## 0.5.0 (2020-01-17)
+
+- Cake.Git logging added
+
 ## 0.4.0 (2020-01-04)
 
 - Fixing problem reading the local git tags
