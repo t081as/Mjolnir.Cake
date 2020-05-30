@@ -5,7 +5,6 @@
 # ᛗᛁᚮᛚᚾᛁᚱ.CAKE
 
 [![pipeline status](https://gitlab.com/tobiaskoch/Mjolnir.Cake/badges/master/pipeline.svg)](https://gitlab.com/tobiaskoch/Mjolnir.Cake/commits/master)
-[![maintained: yes](https://tobiaskoch.gitlab.io/badges/maintained-yes.svg)](https://gitlab.com/tobiaskoch/Mjolnir.Cake/commits/master)
 [![donate: paypal](https://tobiaskoch.gitlab.io/badges/donate-paypal.svg)](https://www.tk-software.de/donate)
 
 *One of the most fearsome and powerful tools in existence, capable of leveling mountains*
