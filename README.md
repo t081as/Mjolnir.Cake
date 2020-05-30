@@ -1,3 +1,5 @@
+**This project is no longer maintained; please use the [Nuke Build System](https://nuke.build/) (together with [Mjolnir.Build](https://gitlab.com/tobiaskoch/Mjolnir.Build))instead.**
+
 ![Mjolnir](https://gitlab.com/tobiaskoch/Mjolnir.Cake/raw/master/img/Mjolnir.png)
 
 # ᛗᛁᚮᛚᚾᛁᚱ.CAKE
